@@ -21,7 +21,7 @@ def delete_all_files(folder_path):
 
 
 # Define the folder path for storing files
-folder_path = r"C:\Users\littlex\PycharmProjects\selenium01\PostData"
+folder_path = r"C:\Users\littlex\PycharmProjects\instaBOT\PostData"
 filepath = ""
 
 # Fetch news data from the News API

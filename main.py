@@ -11,11 +11,11 @@ def get_jpg_files(folder_path):
     return jpg_files
 
 #  folder path where post data is saved
-folder_path =r"C:\Users\littlex\PycharmProjects\selenium01\PostData"
+folder_path =r"C:\Users\littlex\PycharmProjects\instaBOT\PostData"
 jpg_files = get_jpg_files(folder_path)
 
 credentials=credential.credentials_()
-chromedriver_path = r"C:\Users\littlex\PycharmProjects\selenium01\WebDriver\chromedriver.exe"
+chromedriver_path = r"C:\Users\littlex\PycharmProjects\instaBOT\WebDriver\chromedriver.exe"
 start_service = Service(chromedriver_path)
 driver = webdriver.Chrome(service=start_service)
 driver.get("https://www.instagram.com/")
@@ -39,7 +39,7 @@ for jpg_file in jpg_files:
     time.sleep(2)
     #import the windos file handling function here fileAccess.py.............
 
-    path = rf"C:\Users\littlex\PycharmProjects\selenium01\PostData\{jpg_file}.jpg"
+    path = rf"C:\Users\littlex\PycharmProjects\instaBOT\PostData\{jpg_file}.jpg"
     pyautogui.click(500, 510, 1)
     pyautogui.typewrite(path)
     pyautogui.hotkey('enter')
@@ -50,7 +50,7 @@ for jpg_file in jpg_files:
     driver.find_element(By.XPATH, "//div[contains(text(),'Next')]").click()
     time.sleep(2)
 
-    with open(rf"C:\Users\littlex\PycharmProjects\selenium01\PostData\{jpg_file}.txt",'r',encoding='utf-8')as caption_file:
+    with open(rf"C:\Users\littlex\PycharmProjects\instaBOT\PostData\{jpg_file}.txt",'r',encoding='utf-8')as caption_file:
         caption = caption_file.read()
         driver.find_element(By.XPATH, "//div[@aria-label='Write a caption...']").send_keys(caption)
 
